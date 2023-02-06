@@ -1,0 +1,32 @@
+<div class="all-artists">
+  <% dataBody.forEach(item => { %>
+  <div class="single-artist">
+    <% if (item.images.length > 0 ) { %>
+    <div
+      style="
+        background-image: url('<%- item.images[0].url%> ');
+        background-size: cover;
+        height: 400px;
+        width: 350px;
+      "
+      class="img-artist"
+    ></div>
+    <% } else { %>
+    <div
+      style="
+        background-image: url('https://wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg');
+        background-size: cover;
+      "
+      alt=""
+    ></div>
+    <% } %>
+    <div class="btn-text">
+      <h1 class="artist-name"><%= item.name %></h1>
+      <button class="artist-btn">
+        <a href="/albums/<%- item.id%> ">View Albums</a>
+      </button>
+    </div>
+  </div>
+
+  <% }) %>
+</div>

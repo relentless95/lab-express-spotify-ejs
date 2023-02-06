@@ -1,0 +1,31 @@
+<div class="all-artists">
+  <div class="artist-container">
+    <h1> Albums for: <%- artistName %> </h1>
+  </div>
+  <% albumArr.forEach(album => { %>
+  <div class="single-artist">
+    <% if (album.images.length > 0 ) { %>
+    <div
+      style="
+        background-image: url('<%- album.images[0].url%> ');
+        background-size: cover;
+        height: 400px;
+        width: 350px;
+      "
+      class="img-artist"
+    ></div>
+    <% } else { %>
+    <div
+      style="
+        background-image: url('https://wellesleysocietyofartists.org/wp-content/uploads/2015/11/image-not-found.jpg');
+        background-size: cover;
+      "
+    ></div>
+    <% } %>
+    <h1 class="artist-name"><%- album.name %></h1>
+    <button class="artist-btn">
+      <a href="/tracks/<%- album.id%> ">View tracks</a>
+    </button>
+  </div>
+  <% }) %>
+</div>
